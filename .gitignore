@@ -6,6 +6,9 @@
 /tmp
 /out-tsc
 
+*.http
+*.help.js
+
 # dependencies
 /node_modules
 
