@@ -1,0 +1,107 @@
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 90vh;
+
+  .chat-box {
+    width: 300px;
+    max-height: 500px;
+    height: 500px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.12), 0 2px 4px 0 rgba(0, 0, 0, 0.08);
+    border-radius: 3% 3% 0 0;
+    position: relative;
+    padding-bottom: 40px;
+
+    .message-area {
+      max-height: 450px;
+      height: 450px;
+      overflow: auto;
+      padding: 20px 20px;
+
+      .message {
+        p {
+          color: white;
+          font-size: 13px;
+          font-weight: bold;
+          margin: 0px;
+          width: 45%;
+          box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+          padding: 7px 10px;
+          margin: 5px 0;
+        }
+      }
+
+      .message.incoming {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+
+        p {
+          border-radius: 0 11px 11px 11px;
+          background: goldenrod;
+        }
+      }
+
+      .message.outgoing {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-end;
+
+        p {
+          border-radius: 11px 11px 0 11px;
+          background: darkgrey;
+        }
+      }
+    }
+
+    .emo-area {
+      position: absolute;
+      bottom: 40px;
+      left: 0;
+      width: 100%;
+      padding: 3px 10px;
+    }
+
+    .input-area {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 40px;
+
+      form {
+        display: flex;
+        height: 100%;
+
+        input {
+          width: 85%;
+          border: none;
+          background: rgba(0, 0, 0, 0.08);
+          padding: 5px 10px;
+          color: rgba(0, 0, 0, 0.3);
+          font-size: 14px;
+          font-weight: bold;
+          font-family: 'Titillium Web', sans-serif;
+
+          &:focus {
+            outline: none;
+          }
+        }
+
+        button {
+          width: 15%;
+          border: none;
+          background: darkslategray;
+          color: white;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
