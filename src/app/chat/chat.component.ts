@@ -24,13 +24,15 @@ export class ChatComponent implements OnInit {
   lastMessageId;
   showEmojis = false;
   score = {
-    isPositive: true,
-    cumScore: 0,
+    tone: '',
+    score: 0,
   };
 
   sendMessage() {
     if (this.message !== '') {
       this.lastMessageId = v4();
+      this.showEmojis = false;
+      
       const data = {
         id: this.lastMessageId,
         text: this.message,
@@ -44,16 +46,13 @@ export class ChatComponent implements OnInit {
           };
           this.messages = this.messages.concat(message);
           this.message = '';
-
-          this.showEmojis = !this.showEmojis;
-
-          // setTimeout(() => (this.showEmojis = !this.showEmojis), 4000);
         });
     }
   }
 
   selectEmoji(e) {
-    this.message += ` ${e}`
+    this.message += ` ${e}`;
+    this.showEmojis = false;
   }
 
   getClasses(messageType) {
@@ -72,7 +71,8 @@ export class ChatComponent implements OnInit {
           ...data,
           type: 'incoming',
         };
-
+        this.showEmojis = true;
+        this.score = data.sentiment;
         this.messages = this.messages.concat(message);
       }
     });
