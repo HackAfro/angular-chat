@@ -6,7 +6,7 @@
       </div>
     </div>
     <div class="emo-area">
-      <app-emoji-panel [showEmojis]="showEmojis" [score]="score" (onEmojiSelect)="selectEmoji($event)"></app-emoji-panel>
+      <app-emoji-panel [showEmojis]="showEmojis" [result]="score" (onEmojiSelect)="selectEmoji($event)"></app-emoji-panel>
     </div>
     <div class="input-area">
       <form (submit)="sendMessage()" name="messageForm" #messageForm="ngForm">
