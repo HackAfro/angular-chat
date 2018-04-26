@@ -7,12 +7,13 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 })
 export class EmojiPanelComponent implements OnInit {
   constructor() {}
-  @Input() score: {} = {};
+  @Input() result: {} = {};
   @Input() showEmojis: boolean = false;
   @Output() onEmojiSelect: EventEmitter<string> = new EventEmitter();
 
   emojiList = {
     positive: ['😀', '😁', '😘', '😄'],
+    neutral: ['😐', '😑', '😶', '🤔'],
     negative: ['😟', '🙁', '😢', '😞'],
   };
 
