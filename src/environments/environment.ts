@@ -6,5 +6,5 @@
 export const environment = {
   production: false,
   apiUrl: 'http://localhost:4000',
-  pusherKey: '3dddad24c242ae9a36ca'
+  pusherKey: '<PUSHER_KEY>'
 };
