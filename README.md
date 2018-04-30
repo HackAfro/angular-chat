@@ -1,6 +1,5 @@
 # Angular-Pusher-Chat
 
-# Project Title
 Emoji suggestions in an Angular chat application using sentiment analysis 
 
 ## Getting Started
