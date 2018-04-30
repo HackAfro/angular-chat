@@ -4,7 +4,7 @@ Emoji suggestions in an Angular chat application using sentiment analysis
 
 ## Getting Started
 
-1. Install the angular #[https://cli.angular.io](CLI) by running `npm install -g @angular/cli`
+1. Install the angular [https://cli.angular.io](CLI) by running `npm install -g @angular/cli`
 2. Clone the repo
 3. Install project dependencies by running `npm install`
 4. Start dev server `npm start`
