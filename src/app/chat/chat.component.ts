@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { v4 } from 'uuid';
-import { environment } from '../../environments/environment';
 import { PusherService } from '../pusher.service';
 
 declare const feather: any;
 
 interface Message {
+  id: string;
   text: string;
-  timeStamp: Date;
+  timeStamp?: Date;
   type: string;
 }
 
@@ -32,21 +32,17 @@ export class ChatComponent implements OnInit {
     if (this.message !== '') {
       this.lastMessageId = v4();
       this.showEmojis = false;
-      
+
       const data = {
         id: this.lastMessageId,
         text: this.message,
+        type: 'outgoing',
       };
+      this.messages = this.messages.concat(data);
+      this.message = '';
       this.http
-        .post(`${environment.apiUrl}/messages`, data)
-        .subscribe((res: Message) => {
-          const message = {
-            ...res,
-            type: 'outgoing',
-          };
-          this.messages = this.messages.concat(message);
-          this.message = '';
-        });
+        .post('http://localhost:4000/messages', data)
+        .subscribe((res: Message) => {});
     }
   }
 
